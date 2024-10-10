@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="first">
+      <h1 class="title">Bem-vindo ao Jogo de Adivinhação!</h1>
+      <p>Advinhe o número secreto entre 1 e 100! Você tem 10 tentativas. Boa sorte!</p>
+      <p class="feedback">Faça seu primeiro palpite!</p>
+      <input
+        type="number"
+        name="number"
+        placeholder="Insira um número"
+        class="input-number"
+      />
+      <br />
+      <button class="submit">Chutar!</button>
+    </div>
+
+    <div class="game">
+      <div class="menor"><h4>1</h2></div>
+      <h4><</h4>
+      <div class="number-mid">
+        <h2 class="the-number">?</h4>
+      </div>
+      <h4>></h4>
+      <div class="maior"><h4>100</h2></div>
+    </div>
+
+    <div class="changes"></div>
+
+    <div class="the-game">
+      <div class="how-play">
+        <h2>Como jogar</h2>
+        <ul>
+          <li>
+            O computador irá gerar um número secreto aleatório entre 1 e 100.
+          </li>
+          <li>Sua missão é adivinhar qual é esse número!</li>
+          <li>Insira um número no campo de entrada e clique em "Chutar".</li>
+          <li>
+            O jogo irá te dizer se o número que você chutou está
+            <strong>muito alto</strong> ou <strong>muito baixo</strong>.
+          </li>
+          <li>Você tem 10 tentativas para adivinhar o número secreto.</li>
+          <li>
+            Se você acertar, receberá uma mensagem de parabéns! Mas se não
+            acertar após 10 tentativas, o número secreto será revelado.
+          </li>
+        </ul>
+      </div>
+
+      <div class="tips-play">
+        <h2>Dicas</h2>
+        <ul>
+          <li>
+            Preste atenção nas mensagens de "muito alto" ou "muito baixo" para
+            ajustar suas tentativas.
+          </li>
+          <li>
+            Quanto mais próximo você estiver do número secreto, mais "quente"
+            estará o seu chute. Se estiver distante, o chute estará "frio".
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Boa sorte e divirta-se!</h3>
+
+    <div class="congratulations">
+      <h2>Parabéns</h2>
+      <p>Parabéns, você acertouu <br>
+        Resposta: <span class="valorFinal"></span>
+      </p>
+      <button class="again">Reniciar</button>
+    </div>
+    <div class="try-again">
+      <h2>Oh dó</h2>
+      <p>Não foi dessa vez, tente novamente! <br>
+        Esse era o número: <span class="valorFinal"></span>
+      </p>
+      <button class="again">Reniciar</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
