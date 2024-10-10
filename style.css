@@ -10,6 +10,14 @@ body {
   font-size: 1.5rem;
 }
 
+.all{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 .first {
   display: flex;
   text-align: center;
@@ -21,8 +29,13 @@ body {
 
 .title{
     text-align: center;
-    margin: 3rem;
+    margin: 2.5rem 3rem;
     padding: 0 8rem;
+}
+
+.txt{
+    margin: 0 12rem;
+    text-align: center;
 }
 
 .input-number{
@@ -43,7 +56,7 @@ body {
 }
 
 .game{
-    margin: 0 auto;
+    margin: 0 50rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -55,6 +68,10 @@ body {
 /* .game .number-mid{
     margin-left: 4rem;
 } */
+
+.hotOrCold{
+    text-align: center;
+}
 
 .changes{
     text-align: center;
@@ -68,7 +85,7 @@ h2{
     margin: 0 1rem;
 }
 
-.how-play, .tips-play {
+/* .how-play, .tips-play {
     background-color: rgb(54, 54, 54);
     display: flex;
     flex-direction: column;
@@ -77,7 +94,7 @@ h2{
     margin: 1.5rem auto;
     padding: 1rem 0.8rem;
     border-radius: 1rem;
-}
+} */
 
 h3{
     text-align: center;

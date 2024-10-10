@@ -4,8 +4,11 @@ let changes = document.querySelector(".changes");
 let btn = document.querySelector(".submit");
 let numberMaior = document.querySelector(".maior");
 let numberMenor = document.querySelector(".menor");
+let tips = document.querySelector('.hotOrCold');
 
-let tentativas = document.createElement('p')
+let p = document.createElement('p')
+let h3 = document.createElement('h3')
+
 
 let attemps = 0;
 
@@ -26,18 +29,41 @@ function validar() {
       //se o numero que o user colocou for maior que o valor secreto
       attemps++;
       numberMaior.innerHTML = valueNumber;
-    } else if (attemps > 10) {
-        alert(`Não deu :( a resposta era, ${numberSecret}`)
     } else {
       //numero chutado correto
-      alert(`Você ACERTOUUU, com ' ${attemps} tentativas`)
+      alert(`Você ACERTOUUU, com ${attemps} tentativas`)
     }
 
-    tentativas.innerHTML = `Faltam ${10 - attemps}`;
-    changes.appendChild(tentativas)
+    if (attemps > 10) {
+      alert(`Não deu :( a resposta era ${numberSecret}`)
+    } else {
+      p.innerHTML = `Faltam ${10 - attemps} tentativas`;
+    }
+
+    hotAndCold(numberSecret, valueNumber);
+    changes.appendChild(p)
   } else {
     console.log("Por favor, insira um número válido entre 0 e 100.");
   }
+}
+
+function hotAndCold(secret, input){
+
+  let valueCalc = Math.abs(secret - input);
+
+  if(valueCalc > 70){
+    h3.innerHTML = 'MUITO FRIO';
+  } else if (valueCalc > 50){
+    h3.innerHTML = 'FRIO';
+  } else if (valueCalc > 30){
+    h3.innerHTML = 'MORNO';
+  } else if (valueCalc > 10){
+    h3.innerHTML = 'QUENTE';
+  } else {
+    h3.innerHTML = 'MUITO QUENTE';
+  }
+
+  tips.appendChild(h3)
 }
 
 const randomNumberInterval = (a, b) => {
