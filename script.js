@@ -49,17 +49,24 @@ function validar() {
 
 function hotAndCold(secret, input){
 
+  h3.classList.remove('hot', 'cold', 'mid')
+ 
   let valueCalc = Math.abs(secret - input);
 
   if(valueCalc > 70){
+    h3.classList.add('cold');
     h3.innerHTML = 'MUITO FRIO';
   } else if (valueCalc > 50){
+    h3.classList.add('cold');
     h3.innerHTML = 'FRIO';
   } else if (valueCalc > 30){
+    h3.classList.add('mid');
     h3.innerHTML = 'MORNO';
   } else if (valueCalc > 10){
+    h3.classList.add('hot');
     h3.innerHTML = 'QUENTE';
   } else {
+    h3.classList.add('hot');
     h3.innerHTML = 'MUITO QUENTE';
   }
 
