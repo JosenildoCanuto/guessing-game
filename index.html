@@ -78,19 +78,23 @@
 
     <h3>Boa sorte e divirta-se!</h3>
 
-    <div class="congratulations">
-      <h2>Parabéns</h2>
-      <p>Parabéns, você acertouu <br>
-        Resposta: <span class="valorFinal"></span>
-      </p>
-      <button class="again">Reniciar</button>
+    <div class="popup-win active">
+      <div class="overlay"></div>
+      <div class="popup-content-win">
+          <h2>Acertouuu</h2>
+          <img src="assets/SORRY.gif" alt="gif emoji sorrindo" class="gif">
+          <div class="tentativaTotal"></div>
+          <button class="again">Reniciar</button>
+        </div>
     </div>
-    <div class="try-again">
-      <h2>Oh dó</h2>
-      <p>Não foi dessa vez, tente novamente! <br>
-        Esse era o número: <span class="valorFinal"></span>
-      </p>
-      <button class="again">Reniciar</button>
+    <div class="popup-lose active">
+      <div class="popup-content-lose">
+        <h2>Oh dó</h2>
+        <!-- <div class="tenor-gif-embed cry" data-postid="19033662" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/chorando-gif-19033662">Chorando GIF</a>from <a href="https://tenor.com/search/chorando-gifs">Chorando GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script> -->
+        <img src="assets/cry.gif" alt="gif emoji chorando" class="gif">
+        <div class="valorFinal"></div>
+        <button class="again">Reniciar</button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

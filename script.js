@@ -5,6 +5,13 @@ let btn = document.querySelector(".submit");
 let numberMaior = document.querySelector(".maior");
 let numberMenor = document.querySelector(".menor");
 let tips = document.querySelector('.hotOrCold');
+let modalWin = document.querySelector('.popup-content-win');
+let modalLose = document.querySelector('.popup-content-lose');
+let totalTentativa= document.querySelector('.tentativaTotal');
+let valorFinal = document.querySelector('.valorFinal')
+let popupWin = document.querySelector('.popup-win');
+let popupLose = document.querySelector('.popup-lose');
+
 
 let p = document.createElement('p')
 let h3 = document.createElement('h3')
@@ -31,20 +38,27 @@ function validar() {
       numberMaior.innerHTML = valueNumber;
     } else {
       //numero chutado correto
-      alert(`Você ACERTOUUU, com ${attemps} tentativas`)
+      // alert(`Você ACERTOUUU, com ${attemps} tentativas`)
+      popupWin.classList.remove('active')
+      p.innerHTML = `Parabéns, você acertouu com: ${attemps} tentativas`;
+      totalTentativa.appendChild(p);
     }
 
     if (attemps > 10) {
-      alert(`Não deu :( a resposta era ${numberSecret}`)
+      popupLose.classList.remove('active')
+      p.innerHTML = `Não foi dessa vez, tente novamente! Era o número: ${numberSecret}`
+      valorFinal.appendChild(p)
     } else {
       p.innerHTML = `Faltam ${10 - attemps} tentativas`;
+      changes.appendChild(p)
     }
 
     hotAndCold(numberSecret, valueNumber);
-    changes.appendChild(p)
   } else {
-    console.log("Por favor, insira um número válido entre 0 e 100.");
+    alert("Por favor, insira um número válido entre 0 e 100.");
   }
+
+  inputN.value = '';
 }
 
 function hotAndCold(secret, input){
