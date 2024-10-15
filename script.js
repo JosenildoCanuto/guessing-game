@@ -12,11 +12,13 @@ let valorFinal = document.querySelector(".valorFinal");
 let popupWin = document.querySelector(".popup-win");
 let popupLose = document.querySelector(".popup-lose");
 let btnAgain = document.querySelectorAll(".again");
+let attempsNumbersHistory = document.querySelector(".attempsNumbers");
 
 let p = document.createElement("p");
 let h3 = document.createElement("h3");
 
 let attemps = 0;
+let numbersAttemps = [];
 
 btn.addEventListener("click", validar);
 btnAgain.forEach((btn) => {
@@ -34,16 +36,19 @@ function validar() {
       //se o numero que o user colocou for menor que o valor secreto
       attemps++;
       numberMenor.innerHTML = valueNumber;
+      numbersAttemps.push(valueNumber);
     } else if (valueNumber > numberSecret) {
       //se o numero que o user colocou for maior que o valor secreto
       attemps++;
       numberMaior.innerHTML = valueNumber;
+      numbersAttemps.push(valueNumber);
     } else {
       //numero chutado correto
       attemps++;
       p.innerHTML = `Parabéns, você acertouu com: ${attemps} tentativas`;
       totalTentativa.appendChild(p);
       popupWin.classList.add('active');
+      numbersAttemps.push(valueNumber);
       return;
     }
     
@@ -57,6 +62,7 @@ function validar() {
     }
     
     hotAndCold(numberSecret, valueNumber);
+    history();
   } else {
     alert("Por favor, insira um número válido entre 0 e 100.");
   }
@@ -102,6 +108,15 @@ function againGame(){
   randomNumberInterval(1, 100);
 }
 
+function history() {
+  attempsNumbersHistory.innerHTML = '';
+
+  numbersAttemps.forEach((number, i) => {
+    let p = document.createElement('p');
+    p.innerHTML = `${i+1}) ${number}`;
+    attempsNumbersHistory.appendChild(p);
+  });
+}
 const randomNumberInterval = (a, b) => {
   return Math.floor(Math.random() * (b - a + 1)) + a;
 };

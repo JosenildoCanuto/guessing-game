@@ -1,10 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+
 html {
   font-size: 62.5%;
 }
 
 body {
   margin: 0;
-  background-color: #1e1e1e;
+  background-color: #0e0e0e;
   color: white;
   font-family: sora;
   font-size: 1.5rem;
@@ -14,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   margin: 0 auto;
 }
 
@@ -24,46 +29,91 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: start;
+  text-align: center;
+}
+
+.first h4 {
+  color: #313131;
+  padding-top: 5rem;
+  margin: 1rem;
 }
 
 .title {
   text-align: center;
-  margin: 2.5rem 3rem;
-  padding: 0 8rem;
+  font-weight: 800;
+  margin: 0;
+  padding: 0 5rem;
 }
 
 .txt {
-  margin: 0 4rem;
+  margin: 1rem;
+  padding: 0 8rem;
   text-align: center;
+}
+
+.feedback {
+  margin: 1rem;
 }
 
 .input-number {
-  width: 20rem;
+  width: 20.5rem;
   padding: 1rem;
+  margin: 0 1rem;
+  font-family: sora;
+  font-size: 1.8rem;
   text-align: center;
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
+  border: none;
 }
 
 .submit {
-  padding: 1rem;
   width: 22.5rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  font-size: 1.8rem;
   color: white;
   font-weight: bold;
   background-color: green;
   border: none;
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
 }
 
 .game {
-  margin: auto 5rem;
+  width: 100%;
+  margin: 1.5rem auto;
+  padding: 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 2rem;
   font-size: 3rem;
 }
+
+.menor, .maior{
+  background-color: #1a1a1a;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 auto;
+  width: 9rem;
+  height: 8rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .game{
+    margin: 0;
+  }
+  .menor{
+    margin: 0;
+  }
+  .maior{
+    margin: 0;
+  }
+} 
 
 .hotOrCold {
   text-align: center;
@@ -83,6 +133,18 @@ h2 {
 
 h3 {
   text-align: center;
+}
+
+.container-attemps h3{
+  margin: 0;
+}
+
+.attempsNumbers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  gap: 1rem;
 }
 
 .popup-win, .popup-lose{
@@ -175,7 +237,7 @@ margin: 0 1rem;
   background-color: #02853b;
 }
 
-/* .popup-win.active, .popup-lose.active{
+.popup-win.active, .popup-lose.active{
     top: 0;
     transition: top 0ms ease-in-out 0ms;
 }
@@ -188,11 +250,11 @@ margin: 0 1rem;
 .popup-win.active .popup-content-win, .popup-lose.active .popup-content-lose {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
-} */
+} 
 
-/* .popup-win, .popup-lose{
+.popup-win, .popup-lose{
     display: none;
-} */
+}
 
 .cold {
   color: #0062ff;
