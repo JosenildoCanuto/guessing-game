@@ -6,7 +6,7 @@ body {
   margin: 0;
   background-color: #1e1e1e;
   color: white;
-  font-family: roboto;
+  font-family: sora;
   font-size: 1.5rem;
 }
 
@@ -65,10 +65,6 @@ body {
   font-size: 3rem;
 }
 
-/* .game .number-mid{
-    margin-left: 4rem;
-} */
-
 .hotOrCold {
   text-align: center;
 }
@@ -85,31 +81,26 @@ h2 {
   margin: 0 1rem;
 }
 
-/* .how-play, .tips-play {
-    background-color: rgb(54, 54, 54);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1.5rem auto;
-    padding: 1rem 0.8rem;
-    border-radius: 1rem;
-    color: white
-} */
-
 h3 {
   text-align: center;
 }
 
-.popup {
+.popup-win, .popup-lose{
   position: fixed;
-  top: 100vh;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
-.popup .overlay {
+.popup-win.active, .popup-lose.active{
+  display: flex;
+}
+
+.popup-win .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -120,8 +111,7 @@ h3 {
   transition: opacity 100ms ease-in-out;
 }
 
-.popup-win .popup-content-win,
-.popup-lose .popup-content-lose {
+.popup-lose .popup-content-lose, .popup-win .popup-content-win {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,7 +142,7 @@ h3 {
   height: 15rem;
 }
 
-.popup-win .popup-content-win,
+.popup-win .popup-content-win h2,
 .popup-lose .popup-content-lose h2 {
 margin: 0 1rem;
   color: #111;
@@ -160,10 +150,10 @@ margin: 0 1rem;
   font-size: 2.8rem;
 }
 
-.popup-win .popup-content-win,
+.popup-win .popup-content-win p,
 .popup-lose .popup-content-lose p {
   margin: 0;
-  padding: 0 4rem;
+  padding: 0 5rem;
   color: #111;
   text-align: center;
   font-size: 1.6rem;
@@ -180,7 +170,12 @@ margin: 0 1rem;
   font-size: 1.6rem;
 }
 
-.popup-win.active, .popup-lose.active{
+.popup-win .popup-content-win .again:hover,
+.popup-lose .popup-content-lose .again:hover {
+  background-color: #02853b;
+}
+
+/* .popup-win.active, .popup-lose.active{
     top: 0;
     transition: top 0ms ease-in-out 0ms;
 }
@@ -193,15 +188,11 @@ margin: 0 1rem;
 .popup-win.active .popup-content-win, .popup-lose.active .popup-content-lose {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
-}
+} */
 
 /* .popup-win, .popup-lose{
     display: none;
 } */
-
-.active{
-    display: none;
-}
 
 .cold {
   color: #0062ff;

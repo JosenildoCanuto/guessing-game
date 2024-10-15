@@ -2,12 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
@@ -40,60 +37,24 @@
     <div class="hotOrCold"></div>
     <div class="changes"></div>
 
-    <!-- <div class="the-game">
-      <div class="how-play">
-        <h2>Como jogar</h2>
-        <ul>
-          <li>
-            O computador irá gerar um número secreto aleatório entre 1 e 100.
-          </li>
-          <li>Sua missão é adivinhar qual é esse número!</li>
-          <li>Insira um número no campo de entrada e clique em "Chutar".</li>
-          <li>
-            O jogo irá te dizer se o número que você chutou está
-            <strong>muito alto</strong> ou <strong>muito baixo</strong>.
-          </li>
-          <li>Você tem 10 tentativas para adivinhar o número secreto.</li>
-          <li>
-            Se você acertar, receberá uma mensagem de parabéns! Mas se não
-            acertar após 10 tentativas, o número secreto será revelado.
-          </li>
-        </ul>
-      </div>
-
-      <div class="tips-play">
-        <h2>Dicas</h2>
-        <ul>
-          <li>
-            Preste atenção nas mensagens de "muito alto" ou "muito baixo" para
-            ajustar suas tentativas.
-          </li>
-          <li>
-            Quanto mais próximo você estiver do número secreto, mais "quente"
-            estará o seu chute. Se estiver distante, o chute estará "frio".
-          </li>
-        </ul>
-      </div>
-    </div> -->
-
     <h3>Boa sorte e divirta-se!</h3>
 
-    <div class="popup-win active">
+    
+    <div class="popup-win">
       <div class="overlay"></div>
       <div class="popup-content-win">
           <h2>Acertouuu</h2>
           <img src="assets/SORRY.gif" alt="gif emoji sorrindo" class="gif">
           <div class="tentativaTotal"></div>
-          <button class="again">Reniciar</button>
-        </div>
+          <button class="again" onclick="againGame()">Reniciar</button>
+      </div>
     </div>
-    <div class="popup-lose active">
+    <div class="popup-lose">
       <div class="popup-content-lose">
         <h2>Oh dó</h2>
-        <!-- <div class="tenor-gif-embed cry" data-postid="19033662" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/chorando-gif-19033662">Chorando GIF</a>from <a href="https://tenor.com/search/chorando-gifs">Chorando GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script> -->
         <img src="assets/cry.gif" alt="gif emoji chorando" class="gif">
         <div class="valorFinal"></div>
-        <button class="again">Reniciar</button>
+        <button class="again" onclick="againGame()">Reniciar</button>
       </div>
     </div>
     <script src="script.js"></script>
