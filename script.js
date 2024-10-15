@@ -52,7 +52,7 @@ function validar() {
       return;
     }
     
-    if (attemps > 10) {
+    if (attemps === 10) {
       p.innerHTML = `Não foi dessa vez, tente novamente! Era o número: ${numberSecret}`;
       valorFinal.appendChild(p);
       popupLose.classList.add('active');
@@ -79,7 +79,7 @@ function hotAndCold(secret, input) {
     h3.classList.add("cold");
     h3.innerHTML = "MUITO FRIO";
   } else if (valueCalc > 50) {
-    h3.classList.add("cold");
+    h3.classList.add("frio");
     h3.innerHTML = "FRIO";
   } else if (valueCalc > 30) {
     h3.classList.add("mid");
@@ -88,7 +88,7 @@ function hotAndCold(secret, input) {
     h3.classList.add("hot");
     h3.innerHTML = "QUENTE";
   } else {
-    h3.classList.add("hot");
+    h3.classList.add("quente");
     h3.innerHTML = "MUITO QUENTE";
   }
   
@@ -96,16 +96,18 @@ function hotAndCold(secret, input) {
 }
 
 function againGame(){
+  numberSecret = randomNumberInterval(1, 100);
   attemps = 0
   numberMaior.innerHTML = 100;
   numberMenor.innerHTML = 1;
   number.innerHTML = '?';
   h3.innerHTML = '';
   changes.innerHTML = '';
+  attempsNumbersHistory.innerHTML = '';
   inputN.value = '';
+  numbersAttemps = [];
   popupLose.classList.remove('active');
   popupWin.classList.remove('active');
-  randomNumberInterval(1, 100);
 }
 
 function history() {
@@ -117,6 +119,7 @@ function history() {
     attempsNumbersHistory.appendChild(p);
   });
 }
+
 const randomNumberInterval = (a, b) => {
   return Math.floor(Math.random() * (b - a + 1)) + a;
 };

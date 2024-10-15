@@ -33,7 +33,7 @@ body {
 }
 
 .first h4 {
-  color: #313131;
+  color: #606060;
   padding-top: 5rem;
   margin: 1rem;
 }
@@ -67,15 +67,19 @@ body {
 }
 
 .submit {
-  width: 22.5rem;
+  width: 20.5rem;
   padding: 1rem;
   margin: 0 1rem;
   font-size: 1.8rem;
   color: white;
   font-weight: bold;
-  background-color: green;
+  background-color: #00aa4a;
   border: none;
   border-radius: 0.8rem;
+}
+
+.submit:hover{
+  background-color: #02853b;
 }
 
 .game {
@@ -91,7 +95,7 @@ body {
 }
 
 .menor, .maior{
-  background-color: #1a1a1a;
+  background-color: #4949498f;
   font-size: 3rem;
   font-weight: bold;
   margin: 0 auto;
@@ -101,6 +105,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.the-number {
+  transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 600px) {
@@ -117,6 +125,10 @@ body {
 
 .hotOrCold {
   text-align: center;
+}
+
+.hotOrCold h3 {
+  transition: color 0.3s ease-in-out;
 }
 
 .changes {
@@ -162,7 +174,7 @@ h3 {
   display: flex;
 }
 
-.popup-win .overlay {
+.popup-win .overlay, .popup-lose .overlay  {
   position: absolute;
   top: 0;
   left: 0;
@@ -257,13 +269,22 @@ margin: 0 1rem;
 }
 
 .cold {
-  color: #0062ff;
+  color: #003366; /* Muito Frio */
+}
+
+.frio {
+  color: #0099FF; /* Frio */
 }
 
 .mid {
-  color: orange;
+  color: #FFA500; /* Morno */
 }
 
 .hot {
-  color: rgb(255, 15, 15);
+  color: #FF4500; /* Quente */
 }
+
+.quente {
+  color: #B22222; /* Muito Quente */
+}
+
