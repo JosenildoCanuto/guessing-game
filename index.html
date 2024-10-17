@@ -7,9 +7,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Adivinhe o Número</title>
   </head>
   <body>
+    <div class="profile">
+      <img src="./assets/profile-icon.png" alt="perfil" class="profile-ft">
+      <div class="profile-txt">
+        <div class="username">Username</div>
+        <div class="statistics">
+          <div class="statistics-points">0 Points</div>
+          <p>|</p>
+          <div class="statistics-games">0 Games</div>
+        </div>
+      </div>
+    </div>
     <div class="first">
       <h4>BEM-VINDO AO</h4>
       <h1 class="title">JOGO DE ADIVINHAÇÃO</h1>
@@ -46,14 +57,22 @@
       </div>
     </div>
 
-    
+    <div class="welcome active">
+      <div class="overlay"></div>
+      <div class="welcome-content">
+        <h2>Seja bem vindo/a</h2>
+        <p>Como podemos te chamar?</p>
+        <input type="text" class="name" placeholder="Nome do jogador/a">
+        <button class="btn-modal name-submit" onclick="againGame()">Enviar</button>
+      </div>
+    </div>
     <div class="popup-win">
       <div class="overlay"></div>
       <div class="popup-content-win">
-          <h2>Acertouuu</h2>
+          <h2>ACERTOUU</h2>
           <img src="assets/SORRY.gif" alt="gif emoji sorrindo" class="gif">
           <div class="tentativaTotal"></div>
-          <button class="again" onclick="againGame()">Reniciar</button>
+          <button class="btn-modal" onclick="againGame()">Reniciar</button>
       </div>
     </div>
     <div class="popup-lose">
@@ -62,9 +81,10 @@
         <h2>Oh dó</h2>
         <img src="assets/cry.gif" alt="gif emoji chorando" class="gif">
         <div class="valorFinal"></div>
-        <button class="again" onclick="againGame()">Reniciar</button>
+        <button class="btn-modal" onclick="againGame()">Reniciar</button>
       </div>
     </div>
+    <p>make with ❤️ for Neto</p>
     <script src="script.js"></script>
   </body>
 </html>

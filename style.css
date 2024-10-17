@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 html {
   font-size: 62.5%;
 }
@@ -15,12 +14,43 @@ body {
   font-size: 1.5rem;
 }
 
-.all {
+body p {
+  text-align: center;
+  margin: 1rem;
+}
+
+.profile {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile .profile-ft{
+  height: 3rem;
+}
+
+.profile .profile-txt{
+  display: flex;
   justify-content: center;
-  align-items: start;
-  margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile .profile-txt h3{
+  margin: 0;
+}
+
+.profile .profile-txt .statistics{
+  gap: 1rem;
+  display: flex;
+}
+
+.profile .profile-txt .statistics p {
+  gap: 2rem;
+  margin: 0;
 }
 
 .first {
@@ -34,7 +64,7 @@ body {
 
 .first h4 {
   color: #606060;
-  padding-top: 5rem;
+  padding-top: 3rem;
   margin: 1rem;
 }
 
@@ -78,7 +108,7 @@ body {
   border-radius: 0.8rem;
 }
 
-.submit:hover{
+.submit:hover {
   background-color: #02853b;
 }
 
@@ -94,7 +124,8 @@ body {
   font-size: 3rem;
 }
 
-.menor, .maior{
+.menor,
+.maior {
   background-color: #4949498f;
   font-size: 3rem;
   font-weight: bold;
@@ -112,16 +143,16 @@ body {
 }
 
 @media (min-width: 600px) {
-  .game{
+  .game {
     margin: 0;
   }
-  .menor{
+  .menor {
     margin: 0;
   }
-  .maior{
+  .maior {
     margin: 0;
   }
-} 
+}
 
 .hotOrCold {
   text-align: center;
@@ -147,11 +178,12 @@ h3 {
   text-align: center;
 }
 
-.container-attemps h3{
+.container-attemps h3 {
   margin: 0;
+  padding: 1rem;
 }
 
-.attempsNumbers{
+.attempsNumbers {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,7 +191,9 @@ h3 {
   gap: 1rem;
 }
 
-.popup-win, .popup-lose{
+.popup-win,
+.popup-lose,
+.welcome {
   position: fixed;
   top: 0;
   left: 0;
@@ -170,11 +204,15 @@ h3 {
   align-items: center;
 }
 
-.popup-win.active, .popup-lose.active{
+.popup-win.active,
+.popup-lose.active,
+.welcome {
   display: flex;
 }
 
-.popup-win .overlay, .popup-lose .overlay  {
+.popup-win .overlay,
+.popup-lose .overlay,
+.welcome .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -185,7 +223,9 @@ h3 {
   transition: opacity 100ms ease-in-out;
 }
 
-.popup-lose .popup-content-lose, .popup-win .popup-content-win {
+.popup-lose .popup-content-lose,
+.popup-win .popup-content-win,
+.welcome .welcome-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,15 +257,17 @@ h3 {
 }
 
 .popup-win .popup-content-win h2,
-.popup-lose .popup-content-lose h2 {
-margin: 0 1rem;
+.popup-lose .popup-content-lose h2,
+.welcome .welcome-content h2 {
+  margin: 0 1rem;
   color: #111;
   text-align: center;
   font-size: 2.8rem;
 }
 
 .popup-win .popup-content-win p,
-.popup-lose .popup-content-lose p {
+.popup-lose .popup-content-lose p,
+.welcome .welcome-content p {
   margin: 0;
   padding: 0 5rem;
   color: #111;
@@ -233,8 +275,20 @@ margin: 0 1rem;
   font-size: 1.6rem;
 }
 
-.popup-win .popup-content-win .again,
-.popup-lose .popup-content-lose .again {
+.welcome .welcome-content .name {
+  width: 18rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  font-family: sora;
+  font-size: 1.4rem;
+  text-align: center;
+  border-radius: 0.8rem;
+  border: none;
+}
+
+.popup-win .popup-content-win .btn-modal,
+.popup-lose .popup-content-lose .btn-modal,
+.welcome .welcome-content .btn-modal {
   background-color: #00aa4a;
   color: white;
   border-radius: 2rem;
@@ -244,28 +298,39 @@ margin: 0 1rem;
   font-size: 1.6rem;
 }
 
-.popup-win .popup-content-win .again:hover,
-.popup-lose .popup-content-lose .again:hover {
+.popup-win .popup-content-win .btn-modal:hover,
+.popup-lose .popup-content-lose .btn-modal:hover {
   background-color: #02853b;
 }
 
-.popup-win.active, .popup-lose.active{
-    top: 0;
-    transition: top 0ms ease-in-out 0ms;
+.popup-win.active,
+.popup-lose.active,
+.welcome.active {
+  top: 0;
+  transition: top 0ms ease-in-out 0ms;
 }
 
-.popup-win.active .overlay, .popup-lose.active .overlay {
-    opacity: 1;
-    transition: all 300ms ease-in-out;
+.popup-win.active .overlay,
+.popup-lose.active .overlay,
+.welcome.active .overlay {
+  opacity: 1;
+  transition: all 300ms ease-in-out;
 }
 
-.popup-win.active .popup-content-win, .popup-lose.active .popup-content-lose {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-} 
+.popup-win.active .popup-content-win,
+.popup-lose.active .popup-content-lose,
+.welcome.active .welcome-content {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
 
-.popup-win, .popup-lose{
-    display: none;
+.popup-win,
+.popup-lose {
+  display: none;
+}
+
+.off{
+  display: none;
 }
 
 .cold {
@@ -273,18 +338,17 @@ margin: 0 1rem;
 }
 
 .frio {
-  color: #0099FF; /* Frio */
+  color: #0099ff; /* Frio */
 }
 
 .mid {
-  color: #FFA500; /* Morno */
+  color: #ffa500; /* Morno */
 }
 
 .hot {
-  color: #FF4500; /* Quente */
+  color: #ff4500; /* Quente */
 }
 
 .quente {
-  color: #B22222; /* Muito Quente */
+  color: #b22222; /* Muito Quente */
 }
-
