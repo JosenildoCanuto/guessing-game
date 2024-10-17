@@ -19,6 +19,12 @@ body p {
   margin: 1rem;
 }
 
+body p a{
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
 .profile {
   margin-top: 2rem;
   display: flex;
